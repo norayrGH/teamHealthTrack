@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM amazoncorretto:17.0.10
 VOLUME /tmp
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} teamHelathTrack.jar

@@ -1,0 +1,52 @@
+# Gradle
+.gradle/
+build/
+
+# IntelliJ
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Compiled class file
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Local configuration file (application properties)
+application-local.properties
+
+# IntelliJ IDEA files
+*.iml
+
+# Eclipse metadata
+.metadata/
+
+# Spring Boot config file
+application.properties
+
+# Spring Boot log files
+spring.log
+
+# Maven
+target/
+*.lastUpdated
+
+# Dependency management
+build.gradle.kts
+.settings.gradle.kts
