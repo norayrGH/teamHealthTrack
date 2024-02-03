@@ -36,7 +36,10 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
-    - name: Build & push Docker image
+    - uses: actions/checkout@v3
+      name: Check out code
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build & push Docker image
       with:
         image: norayrgh/team-health-track
         tags: v1, latest
