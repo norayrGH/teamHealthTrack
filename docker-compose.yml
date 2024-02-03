@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+  team_health_track:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/teamHealthTrack
+      - SPRING_DATASOURCE_USERNAME=sandbox
+      - SPRING_DATASOURCE_PASSWORD=sandbox
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - PostgreSQL
+    ports:
+      - "8080:8080"
+
+  PostgreSQL:
+    image: postgres
+    user: root
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=sandbox
+      - POSTGRES_USER=sandbox
+      - POSTGRES_DB=teamHealthTrack
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5

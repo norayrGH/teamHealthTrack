@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: task
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://${JDBC_URL:localhost}:${JDBC_PORT:5432}/${DATABASE_NAME:teamHealthTrack}
+    driver-class-name: org.postgresql.Driver
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    username: ${JDBC_USERNAME:sandbox}
+    password: ${JDBC_PASSWORD:sandbox}
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    table: migrations
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  name: SandBox task API
+  api:
+    title: Spring Boot APIs
+    version: 1.0.0
+    description: Spring Boot APIs description
+    base-package: org.health.track
+    contact-name: Norayr Gharibyan
+    contact-email: norayrgh@gmail.com
+    swagger:
+      enable: true

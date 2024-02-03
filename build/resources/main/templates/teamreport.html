@@ -1,0 +1,71 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>teamReport</title>
+        <link rel="stylesheet" th:href="@{/css/teamreport.css}"/>
+    </head>
+<body>
+
+<div sec:authorize="isAuthenticated()">
+    Logged user: <span sec:authentication="name">Bob</span>
+    <h1>Please feel form</h1>
+</div>
+
+<form action="#" th:action="@{/submitForm}" th:object="${teamreport}" method="post">
+    <label for="press">Пресс</label>
+    <input type="text" id="press" th:field="*{press}" />
+
+    <label for="lowerBack">Поясница</label>
+    <input type="text" id="lowerBack" th:field="*{lowerBack}" />
+
+    <label for="glutealRight">Ягодичная п</label>
+    <input type="text" id="glutealRight" th:field="*{glutealRight}" />
+
+    <label for="glutealLeft">Ягодичная л</label>
+    <input type="text" id="glutealLeft" th:field="*{glutealLeft}" />
+
+    <label for="ankleRight">Голеност п</label>
+    <input type="text" id="ankleRight" th:field="*{ankleRight}" />
+
+    <label for="ankleLeft">Голеност л</label>
+    <input type="text" id="ankleLeft" th:field="*{ankleLeft}" />
+
+    <label for="kneeRight">Колено п</label>
+    <input type="text" id="kneeRight" th:field="*{kneeRight}" />
+
+    <label for="kneeLeft">Колено л</label>
+    <input type="text" id="kneeLeft" th:field="*{kneeLeft}" />
+
+    <label for="tibialisAnteriorRight">Берцов п</label>
+    <input type="text" id="tibialisAnteriorRight" th:field="*{tibialisAnteriorRight}" />
+
+    <label for="tibialisAnteriorLeft">Берцов л</label>
+    <input type="text" id="tibialisAnteriorLeft" th:field="*{tibialisAnteriorLeft}" />
+
+    <label for="adductorMusRight">Привод п</label>
+    <input type="text" id="adductorMusRight" th:field="*{adductorMusRight}" />
+
+    <label for="adductorMusLeft">Привод л</label>
+    <input type="text" id="adductorMusLeft" th:field="*{adductorMusLeft}" />
+
+    <label for="calfMuscleRight">Икра п</label>
+    <input type="text" id="calfMuscleRight" th:field="*{calfMuscleRight}" />
+
+    <label for="calfMuscleLeft">Икра л</label>
+    <input type="text" id="calfMuscleLeft" th:field="*{calfMuscleLeft}" />
+
+    <label for="hamstringsRight">Задняя п</label>
+    <input type="text" id="hamstringsRight" th:field="*{hamstringsRight}" />
+
+    <label for="hamstringsLeft">Задняя л</label>
+    <input type="text" id="hamstringsLeft" th:field="*{hamstringsLeft}" />
+
+    <label for="quadricepsRight">Передняя п</label>
+    <input type="text" id="quadricepsRight" th:field="*{quadricepsRight}" />
+
+    <label for="quadricepsLeft">Передняя л</label>
+    <input type="text" id="quadricepsLeft" th:field="*{quadricepsLeft}" />
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
