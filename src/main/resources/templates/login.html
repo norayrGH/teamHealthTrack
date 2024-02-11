@@ -6,21 +6,19 @@
     <link rel="stylesheet" th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}">
 </head>
 <body>
-<p th:if="${loginError}" class="error">Wrong user or password</p>
+    <p th:if="${loginError}" class="error">Wrong user or password</p>
     <div class="wrapper">
-        <form action="">
+        <form th:action="@{/login.html}" method="post">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username"
-                required>
+                <input type="text" id="username" name="username" autofocus="autofocus" placeholder="username" required/>
                 <i class='bx bxs-user'></i>
             </div>
-
             <div class="input-box">
-                <input type="password" placeholder="Password"  required>
+                <input type="password" id="password" name="password" placeholder="Password" required/>
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <input type="submit" class="btn" value="Log in" />
         </form>
     </div>
 </body>
