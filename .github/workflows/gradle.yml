@@ -46,16 +46,16 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    deploy:
-      needs: build
-      runs-on: [aws-ec2]
-      steps:
-        - name: Pull image form docker hub
-          run: docker pull norayrgh/team-health-track:latest
-        - name: Remove old image
-          run: docker rm -f norayrgh/team-health-track
-        - name: Run docker container
-          run: docker run -d  -p 8080:8080 -name team-health-track norayrgh/team-health-track:latest
+  deploy:
+    needs: build
+    runs-on: [aws-ec2]
+    steps:
+      - name: Pull image form docker hub
+        run: docker pull norayrgh/team-health-track:latest
+      - name: Remove old image
+        run: docker rm -f norayrgh/team-health-track
+      - name: Run docker container
+        run: docker-compose up -d
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
