@@ -5,15 +5,13 @@ services:
       context: ./
       dockerfile: Dockerfile
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/teamHealthTrack
-      - SPRING_DATASOURCE_USERNAME=sandbox
-      - SPRING_DATASOURCE_PASSWORD=sandbox
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_PROFILES_ACTIVE=prod
+      - AWS_ACCESS_KEY_ID=AKIASC5CP3WNYUUF7K44
+      - AWS_SECRET_ACCESS_KEY=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
     depends_on:
       - PostgreSQL
     ports:
       - "8080:8080"
-
   PostgreSQL:
     image: postgres
     user: root

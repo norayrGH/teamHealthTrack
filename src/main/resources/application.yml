@@ -1,6 +1,6 @@
 spring:
   application:
-    name: task
+    name: teamHealthTrack
   jpa:
     hibernate:
       ddl-auto: update
@@ -8,8 +8,8 @@ spring:
     url: jdbc:postgresql://${JDBC_URL:localhost}:${JDBC_PORT:5432}/${DATABASE_NAME:teamHealthTrack}
     driver-class-name: org.postgresql.Driver
     database-platform: org.hibernate.dialect.PostgreSQL94Dialect
-    username: ${JDBC_USERNAME:sandbox}
-    password: ${JDBC_PASSWORD:sandbox}
+    username: ${SPRING_DATASOURCE_USERNAME:sandbox}
+    password: ${SPRING_DATASOURCE_PASSWORD:sandbox}
   flyway:
     enabled: true
     baseline-on-migrate: true
