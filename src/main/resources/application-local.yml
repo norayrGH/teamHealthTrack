@@ -1,6 +1,4 @@
 spring:
-  config:
-    import: aws-secretsmanager:team_health_track
   application:
     name: teamHealthTrack
   jpa:
@@ -9,9 +7,9 @@ spring:
   datasource:
     url: jdbc:postgresql://${JDBC_URL:localhost}:${JDBC_PORT:5432}/${DATABASE_NAME:teamHealthTrack}
     driver-class-name: org.postgresql.Driver
-    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    username: ${SPRING_DATASOURCE_USERNAME:sandbox}
+    password: ${SPRING_DATASOURCE_PASSWORD:sandbox}
   flyway:
     enabled: true
     baseline-on-migrate: true
