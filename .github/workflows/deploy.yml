@@ -32,7 +32,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
-          task-definition: ${{ aws-actions-enviroment.ECS_TASK_DEFINITION }}
+          task-definition: ${{ vars.ECS_TASK_DEFINITION }}
           container-name: team-health-track-container
           image: ${{ steps.build-image.outputs.image }}
 
