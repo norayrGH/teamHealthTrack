@@ -2,8 +2,8 @@ version: '3.1'
 services:
   team_health_track:
     build:
-      context: ..
-      dockerfile: ../Dockerfile
+      context: ../
+      dockerfile: Dockerfile
     depends_on:
       - PostgreSQL
     ports:
