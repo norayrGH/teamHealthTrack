@@ -5,11 +5,11 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc-secretsmanager:postgresql://${HOST:teamhealthtrack-prod.czokgsgw4vpm.us-east-1.rds.amazonaws.com}:${PORT:5432}/${DATABASE_NAME:teamHealthTrack}
+    url: jdbc-secretsmanager:postgresql://${host}:${port}/${dbInstanceIdentifier}
     driver-class-name: com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    username: team-health-track-secret
-    password: team-health-track-secret
+    username: ${username}
+    password: ${password}
   flyway:
     enabled: true
     baseline-on-migrate: true
