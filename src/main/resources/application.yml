@@ -5,8 +5,8 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc-secretsmanager:postgresql://${host}:${port}/${dbInstanceIdentifier}
-    driver-class-name: com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
+    url: jdbc:postgresql://${host}:${port}/${dbInstanceIdentifier}
+    driver-class-name: org.postgresql.Driver
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     username: ${username}
     password: ${password}
