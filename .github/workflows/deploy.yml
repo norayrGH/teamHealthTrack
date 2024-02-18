@@ -3,12 +3,17 @@ env:
   # Setting an environment variable with the value of a configuration variable
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 jobs:
   build:
     name: Build image
     runs-on: ubuntu-latest
+    environment: production
+    env:
+      TASK_DEFINITION: ${{ secrets.ECS_TASK_DEFINITION }}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -34,7 +39,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
-          task-definition: ${{ vars.ECS_TASK_DEFINITION }}
+          task-definition: ${{ TASK_DEFINITION }}
           container-name: team-health-track-container
           image: ${{ steps.build-image.outputs.image }}
 
