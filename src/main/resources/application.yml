@@ -5,7 +5,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://teamhealthtrack-prod.czokgsgw4vpm.us-east-1.rds.amazonaws.com}:${port}/${dbInstanceIdentifier}
+    url: jdbc:postgresql://${host}:${port}/${dbInstanceIdentifier}
     driver-class-name: org.postgresql.Driver
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     username: ${username}
