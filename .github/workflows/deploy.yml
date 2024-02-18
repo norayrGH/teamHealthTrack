@@ -41,6 +41,7 @@ jobs:
           REPOSITORY: team-health-track-repository
           IMAGE_TAG: ${{ github.sha }}
         run: |
+          docker system prune -a
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG . --no-cache
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
