@@ -1,9 +1,9 @@
 {
-    "family": "team-health-track-task-ec2-family",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:143685311899:task-definition/team-health-track-task-ec2-family:14",
     "containerDefinitions": [
         {
             "name": "team-health-track-container",
-            "image": "143685311899.dkr.ecr.us-east-1.amazonaws.com/team-health-track-repository:60c873e0504af329676d7703dc28d81dedf52a90",
+            "image": "/team-health-track-repository:f8e5c95688c79a099f4c6d90fcc8bc2e0f279527",
             "cpu": 0,
             "portMappings": [
                 {
@@ -72,9 +72,43 @@
             }
         }
     ],
+    "family": "team-health-track-task-ec2-family",
     "taskRoleArn": "arn:aws:iam::143685311899:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::143685311899:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
+    "revision": 14,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.secrets.asm.environment-variables"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2"
+    ],
     "requiresCompatibilities": [
         "EC2"
     ],
@@ -83,5 +117,8 @@
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
-    }
+    },
+    "registeredAt": "2024-02-18T11:52:05.670Z",
+    "registeredBy": "arn:aws:iam::143685311899:user/team-health-track-github-ci-user",
+    "tags": []
 }
