@@ -36,7 +36,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
-          task-definition: team-health-track-task-ec2-family
+          task-definition: team-health-track-task-ec2-family.json
           container-name: team-health-track-container
           image: ${{ steps.build-image.outputs.image }}
 
