@@ -1,0 +1,87 @@
+{
+    "family": "team-health-track-task-ec2-family",
+    "containerDefinitions": [
+        {
+            "name": "team-health-track-container",
+            "image": "143685311899.dkr.ecr.us-east-1.amazonaws.com/team-health-track-repository:60c873e0504af329676d7703dc28d81dedf52a90",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "team-health-track-container-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                },
+                {
+                    "name": "team-health-track-container-8080-tcp",
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                },
+                {
+                    "name": "team-health-track-container-22-tcp",
+                    "containerPort": 22,
+                    "hostPort": 22,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                },
+                {
+                    "name": "team-health-track-container-5432-tcp",
+                    "containerPort": 5432,
+                    "hostPort": 5432,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [
+                {
+                    "name": "username",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
+                },
+                {
+                    "name": "password",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
+                },
+                {
+                    "name": "host",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
+                },
+                {
+                    "name": "prot",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
+                },
+                {
+                    "name": "dbInstanceIdentifier",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/team-health-track-task-ec2-family",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "taskRoleArn": "arn:aws:iam::143685311899:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::143685311899:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "1024",
+    "memory": "512",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
