@@ -58,7 +58,6 @@ jobs:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: team-health-track-service
           cluster: team-health-tack-cluster
-          wait-for-service-stability: true
   dependency-submission:
     runs-on: ubuntu-latest
     permissions:
