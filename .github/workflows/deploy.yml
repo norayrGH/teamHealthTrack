@@ -42,6 +42,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           ls -la
+          pwd
           docker buildx prune -f
           docker build  --no-cache -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f Dockerfile .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
