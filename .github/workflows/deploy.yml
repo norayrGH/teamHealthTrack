@@ -42,6 +42,6 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker system prune -a --force
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG . --no-cache
+          docker build  --no-cache -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
