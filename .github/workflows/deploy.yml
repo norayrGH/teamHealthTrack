@@ -41,9 +41,36 @@ jobs:
           REPOSITORY: team-health-track-repository
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          ls -la
-          pwd
           ./gradlew clean build 
-          docker build  --no-cache -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f Dockerfile .
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
+        with:
+          task-definition: team-health-track-task-ec2-family.json
+          container-name: team-health-track-container
+          image: ${{ steps.build-image.outputs.image }}
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@df9643053eda01f169e64a0e60233aacca83799a
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: team-health-track-service
+          cluster: team-health-tack-cluster
+          wait-for-service-stability: true
+  dependency-submission:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'corretto'
+          architecture: x64
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+
