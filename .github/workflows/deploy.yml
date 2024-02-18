@@ -37,7 +37,7 @@ jobs:
         with:
           task-definition: $TASK_DEFINITION
           container-name: team-health-track-container
-          image: ${{ steps.build-image.outputs.image }}
+          image: ${{ steps.login-ecr.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@df9643053eda01f169e64a0e60233aacca83799a
