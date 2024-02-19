@@ -40,12 +40,12 @@
             "volumesFrom": [],
             "secrets": [
                 {
-                    "name": "username",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
+                    "name": "SPRING_DATASOURCE_USERNAME",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT:username"
                 },
                 {
-                    "name": "password",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
+                    "name": "SPRING_DATASOURCE_PASSWORD",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT:password"
                 }
             ],
             "logConfiguration": {
