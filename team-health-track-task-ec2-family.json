@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "team-health-track-container",
-            "image": "/team-health-track-repository:51f7d84cff449341edffe5629694a977ef05bca2",
+            "image": "143685311899.dkr.ecr.us-east-1.amazonaws.com/team-health-track-repository:latest",
             "cpu": 0,
             "portMappings": [
                 {
