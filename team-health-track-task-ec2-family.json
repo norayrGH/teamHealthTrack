@@ -46,18 +46,6 @@
                 {
                     "name": "password",
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
-                },
-                {
-                    "name": "host",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
-                },
-                {
-                    "name": "db_name",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
-                },
-                {
-                    "name": "url",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
                 }
             ],
             "logConfiguration": {
