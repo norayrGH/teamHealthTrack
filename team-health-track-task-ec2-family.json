@@ -41,11 +41,11 @@
             "secrets": [
                 {
                     "name": "SPRING_DATASOURCE_USERNAME",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT:username"
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret:username"
                 },
                 {
                     "name": "SPRING_DATASOURCE_PASSWORD",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT:password"
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret:password"
                 }
             ],
             "logConfiguration": {
