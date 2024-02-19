@@ -5,7 +5,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://${host}:${port:5432}/${db_name}
+    url: ${url}
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     username: ${username}
     password: ${password}
