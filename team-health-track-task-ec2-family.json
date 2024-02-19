@@ -49,7 +49,7 @@
                 },
 
                 {
-                    "name": "SPRING_DATASOURCE_PASSWORD",
+                    "name": "url",
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT:url"
                 }
             ],
