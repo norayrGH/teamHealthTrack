@@ -53,11 +53,7 @@
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
                 },
                 {
-                    "name": "prot",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
-                },
-                {
-                    "name": "dbInstanceIdentifier",
+                    "name": "db_name",
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:143685311899:secret:team-health-track-secret-0wNeIT"
                 }
             ],

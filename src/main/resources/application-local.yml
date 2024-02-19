@@ -5,10 +5,10 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://${host}:${port:5432}/${db_name}
+    url: jdbc:postgresql://${JDBC_URL:localhost}:${JDBC_PORT:5432}/${DATABASE_NAME:teamHealthTrack}
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    username: ${username}
-    password: ${password}
+    username: ${SPRING_DATASOURCE_USERNAME:sandbox}
+    password: ${SPRING_DATASOURCE_PASSWORD:sandbox}
   flyway:
     enabled: true
     baseline-on-migrate: true
@@ -28,4 +28,4 @@ app:
     contact-name: Norayr Gharibyan
     contact-email: norayrgh@gmail.com
     swagger:
-      enable: false
+      enable: true
