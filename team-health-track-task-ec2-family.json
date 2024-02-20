@@ -32,6 +32,13 @@
                     "hostPort": 5432,
                     "protocol": "tcp",
                     "appProtocol": "http"
+                },
+                {
+                    "name": "secret-manager-443-tcp",
+                    "containerPort": 443,
+                    "hostPort": 443,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
                 }
             ],
             "essential": true,
