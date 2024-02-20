@@ -5,7 +5,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc-secretsmanager:postgresql://teamhealthtrack-prod-v2.czokgsgw4vpm.us-east-1.rds.amazonaws.com:5432/team_health_track
+    url: jdbc-secretsmanager:postgresql://team-health-track-db.czokgsgw4vpm.us-east-1.rds.amazonaws.com:5432/team_health_track
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     username: team-health-track-secret
     password: team-health-track-secret
