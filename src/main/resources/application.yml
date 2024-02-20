@@ -7,8 +7,8 @@ spring:
   datasource:
     url: jdbc:postgresql://teamhealthtrack-prod-v2.czokgsgw4vpm.us-east-1.rds.amazonaws.com:5432/team_health_track
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    username: ${username}
+    password: ${password}
   flyway:
     enabled: true
     baseline-on-migrate: true
