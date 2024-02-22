@@ -21,7 +21,7 @@ public class AppUser extends AbstractUser {
     Boolean isAccountNonLocked,
     Boolean isCredentialsNonExpired,
     Boolean isEnabled){
-        super(id, username,name,secondName, password, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled);
+        super(id, username, password, name, secondName, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled);
 
     }
 

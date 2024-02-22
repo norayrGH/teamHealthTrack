@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class SignUpDto {
 	private String username;
-	private String Name;
-	private String SecondName;
+	private String name;
+	private String secondName;
 	private String password;
 	private String repeatPassword;
 	private Boolean isManager;
