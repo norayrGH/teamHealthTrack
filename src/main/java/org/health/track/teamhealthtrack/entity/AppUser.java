@@ -15,11 +15,14 @@ public class AppUser extends AbstractUser {
     public AppUser(Long id,
     String username,
     String password,
+    String name,
+    String secondName,
     Boolean isAccountNonExpired,
     Boolean isAccountNonLocked,
     Boolean isCredentialsNonExpired,
     Boolean isEnabled){
-        super(id, username, password, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled);
+        super(id, username,name,secondName, password, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled);
+
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "appUser", cascade = CascadeType.ALL)

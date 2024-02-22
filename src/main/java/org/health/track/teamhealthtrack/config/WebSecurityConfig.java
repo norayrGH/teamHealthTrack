@@ -34,7 +34,7 @@ public class WebSecurityConfig {
 			.formLogin((form) -> form
 					.loginPage("/login.html")
 					.failureUrl("/login-error.html")
-					.successForwardUrl("/teamReport")
+					.defaultSuccessUrl("/dispatch",true)
 				.permitAll()
 			)
 			.logout((logout-> logout.logoutSuccessUrl("/login.html")

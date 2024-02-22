@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>teamreport</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+
+<div class="container text-center">
+    <div sec:authorize="isAuthenticated()">
+        Logged user: <span sec:authentication="name">Bob</span>
+        <h1>Please fill the form</h1>
+    </div>
+
+    <form action="#" th:action="@{/submitForm}" th:object="${teamreport}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="press">Press/Пресс:</label>
+                    <input type="number" id="press" th:field="*{press}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="lowerBack">Lower Back/Поясница:</label>
+                    <input type="number" id="lowerBack" th:field="*{lowerBack}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="glutealRight">Gluteal Right/Ягодичная правая:</label>
+                    <input type="number" id="glutealRight" th:field="*{glutealRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="glutealLeft">Gluteal Left/Ягодичная левая:</label>
+                    <input type="number" id="glutealLeft" th:field="*{glutealLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="ankleRight">Ankle Right/Голеностоп правый:</label>
+                    <input type="number" id="ankleRight" th:field="*{ankleRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="ankleLeft">Ankle Left/Голеностоп левый:</label>
+                    <input type="number" id="ankleLeft" th:field="*{ankleLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <!-- Repeat the above structure for the remaining fields -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="kneeRight">Knee Right/Колено правое:</label>
+                    <input type="number" id="kneeRight" th:field="*{kneeRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="kneeLeft">Knee Left/Колено левое:</label>
+                    <input type="number" id="kneeLeft" th:field="*{kneeLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="tibialisAnteriorRight">Tibialis Anterior Right/Передний м. голени правый:</label>
+                    <input type="number" id="tibialisAnteriorRight" th:field="*{tibialisAnteriorRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="tibialisAnteriorLeft">Tibialis Anterior Left/Передний м. голени левый:</label>
+                    <input type="number" id="tibialisAnteriorLeft" th:field="*{tibialisAnteriorLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="adductorMusRight">Adductor Muscle Right/М. приводящий правый:</label>
+                    <input type="number" id="adductorMusRight" th:field="*{adductorMusRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="adductorMusLeft">Adductor Muscle Left/М. приводящий левый:</label>
+                    <input type="number" id="adductorMusLeft" th:field="*{adductorMusLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="calfMuscleRight">Calf Muscle Right/М. икроножный правый:</label>
+                    <input type="number" id="calfMuscleRight" th:field="*{calfMuscleRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="calfMuscleLeft">Calf Muscle Left/М. икроножный левый:</label>
+                    <input type="number" id="calfMuscleLeft" th:field="*{calfMuscleLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="hamstringsRight">Hamstrings Right/М. бедренный правый:</label>
+                    <input type="number" id="hamstringsRight" th:field="*{hamstringsRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="hamstringsLeft">Hamstrings Left/М. бедренный левый:</label>
+                    <input type="number" id="hamstringsLeft" th:field="*{hamstringsLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="quadricepsRight">Quadriceps Right/М. четырехглавый правый:</label>
+                    <input type="number" id="quadricepsRight" th:field="*{quadricepsRight}" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="quadricepsLeft">Quadriceps Left/М. четырехглавый левый:</label>
+                    <input type="number" id="quadricepsLeft" th:field="*{quadricepsLeft}" class="form-control" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

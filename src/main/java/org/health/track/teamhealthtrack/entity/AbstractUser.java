@@ -15,6 +15,8 @@ public class AbstractUser {
 	@Column(nullable = false, unique = true)
 	private String username;
 	private String password;
+	private String name;
+	private String secondName;
 	private Boolean isAccountNonExpired;
 	private Boolean isAccountNonLocked;
 	private Boolean isCredentialsNonExpired;

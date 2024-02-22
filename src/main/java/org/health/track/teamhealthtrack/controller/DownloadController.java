@@ -62,7 +62,7 @@ public class DownloadController {
 			Map<String, List<TeamReport>> groupedReports = managerByUserName.getTeammates()
 					.stream()
 					.flatMap(appUser -> appUser.getUserReports().stream())
-					.collect(Collectors.groupingBy(report -> report.getAppUser().getUsername()));
+					.collect(Collectors.groupingBy(report -> report.getAppUser().getName() + " " + report.getAppUser().getSecondName()));
 
 			final int[] headerCellIndex = {1};
 			final int[] headerRowIndex = {1};

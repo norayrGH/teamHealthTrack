@@ -11,23 +11,23 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TeamReportDTO {
 
-    private String press;
-    private String lowerBack;
-    private String glutealRight;
-    private String glutealLeft;
-    private String ankleRight;
-    private String ankleLeft;
-    private String kneeRight;
-    private String kneeLeft;
-    private String tibialisAnteriorRight;
-    private String tibialisAnteriorLeft;
-    private String adductorMusRight;
-    private String adductorMusLeft;
-    private String calfMuscleRight;
-    private String calfMuscleLeft;
-    private String hamstringsRight;
-    private String hamstringsLeft;
-    private String quadricepsRight;
-    private String quadricepsLeft;
+    private Integer press;
+    private Integer lowerBack;
+    private Integer glutealRight;
+    private Integer glutealLeft;
+    private Integer ankleRight;
+    private Integer ankleLeft;
+    private Integer kneeRight;
+    private Integer kneeLeft;
+    private Integer tibialisAnteriorRight;
+    private Integer tibialisAnteriorLeft;
+    private Integer adductorMusRight;
+    private Integer adductorMusLeft;
+    private Integer calfMuscleRight;
+    private Integer calfMuscleLeft;
+    private Integer hamstringsRight;
+    private Integer hamstringsLeft;
+    private Integer quadricepsRight;
+    private Integer quadricepsLeft;
 
 }
