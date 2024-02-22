@@ -37,7 +37,7 @@ public class TeamReportController {
 	@RequestMapping(method = RequestMethod.GET, path = "/teamreport")
 	public ModelAndView submitReportGet(Authentication authentication) {
 		var modelAndView = new ModelAndView();
-		modelAndView.setViewName("teamreport");
+		modelAndView.setViewName("teamReport");
 		modelAndView.addObject("teamreport", new TeamReportDTO());
 		return modelAndView;
 	}
